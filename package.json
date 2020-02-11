@@ -15,9 +15,9 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@parcel/babel-preset": "^2.0.0-alpha.2",
+    "@babel/plugin-transform-react-jsx": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "parcel": "^2.0.0-nightly.83",
@@ -25,9 +25,15 @@
   },
   "babel": {
     "presets": [
-      "@parcel/babel-preset"
+      [
+        "@babel/preset-typescript",
+        {
+          "isTsx": true
+        }
+      ]
     ],
     "plugins": [
+      "@babel/plugin-transform-react-jsx",
       "@babel/plugin-proposal-class-properties"
     ]
   }
